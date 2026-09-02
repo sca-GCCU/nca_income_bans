@@ -4,34 +4,13 @@
 * --- HOUSEKEEPING ---
 * --------------------
 cd "C:\Users\scana\OneDrive\Documents\research\projects\nca_income_bans"
-log using "logs/clean_qwi.log", replace 
+log using "logs/prep_qwi.log", replace 
 clear all 
 
 * Some locals for restrictions later
 local first_year = 2012 
 local last_year = 2025 
 
-* ---------------------
-* --- PREP CPI DATA --- 
-* ---------------------
-import excel "data/raw_data/historical-cpi-u-202601.xlsx", ///
-	sheet("Index Averages") cellrange(B7:E119) clear 
-drop C D
-rename B year_string
-rename E cpi 
-gen year = real(year_string)
-drop year_string
-order year, before(cpi)
-save "data/clean_data/annual_cpi.dta", replace  
-
-
-* --------------------------------
-* --- PREP STATE NCA LAWS DATA --- 
-* --------------------------------
-import delimited "data/raw_data/state_nca_laws.csv", stringcols(1) clear 
-drop source* notes
-rename statefip state_fips
-save "data/clean_data/state_nca_laws.dta", replace 
 
 * ------------------------
 * --- PREP OVERALL QWI --- 
@@ -46,13 +25,13 @@ local qwi_var geography year quarter earnhirns searnhirns emp semp emps semps //
 	hirn shirn hirns shirns
 keep `qwi_var'
 
-rename geography county_fips 
-gen state_fips = substr(county_fips, 1, 2)
-order state_fips, after(county_fips)
+rename geography countyfip 
+gen statefip = substr(countyfip, 1, 2)
+order statefip, after(countyfip)
 
 * Merge with treatment data 
-merge m:1 state_fips using "data/clean_data/state_nca_laws.dta"
-
+merge m:1 statefip using "data/clean_data/state_nca_laws.dta"
+drop _merge
 
 * Impose ban restrictions 
 
@@ -87,11 +66,6 @@ merge m:1 state_fips using "data/clean_data/state_nca_laws.dta"
 
 
 * --- PREP EDUC BY INDUSTRY QWI --- 
-
- 
-
-
-
 
 
 
