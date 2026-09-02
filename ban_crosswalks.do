@@ -1,53 +1,16 @@
 * Title: Create OCC- and IND-Ban Crosswalks
 
+* -----------------------------------------
 * ----------- HOUSEKEEPING ----------------
+* -----------------------------------------
 cd "C:\Users\scana\OneDrive\Documents\research\projects\nca_income_bans"
 log using "logs/ban_crosswalks.log", replace 
 clear all 
 
 
-* ------------- LOAD 1990 CODE CROSSWALK ------------
-import delimited "data/raw_data/coverage_occ1990_ind1990_crosswalk.csv", ///
-	varnames(1) clear 
-
-split occ1990, parse(";")
-drop occ1990
-
-split ind1990, parse(";")
-drop ind1990
-
-reshape long occ1990 ind1990, i(coverage) j(temp_var)
-
-local drop_var notes temp_var
-drop `drop_var'
-
-drop if missing(occ1990) & missing(ind1990)
-
-replace occ1990 = trim(occ1990)
-replace ind1990 = trim(ind1990)
-
-gen rule = 1 if match_rule == "occ1990" 
-replace rule = 2 if match_rule == "ind1990"
-replace rule = 3 if match_rule == "intersection"
-
-label define rule_lbl 1 "occ1990" 2 "ind1990" 3 "intersection"
-label values rule rule_lbl
-
-drop match_rule
-
-gen confidence_flag = 1 if confidence == "high"
-replace confidence_flag = 2 if confidence == "medium"
-replace confidence_flag = 3 if confidence == "low"
-
-label define confidence_flag_lbl 1 "high" 2 "medium" 3 "low"
-label value confidence_flag confidence_flag_lbl
-
-drop confidence
-
-save "data/clean_data/coverage_occ1990_ind1990_crosswalk.dta", replace
-
-
+* ------------------------------------------------
 * ----------- IDENTIFY BAN COVERAGE --------------
+* ------------------------------------------------
 * Load State Laws Spreadsheet 
 import delimited "data/raw_data/state_nca_laws.csv", clear 
 
@@ -86,23 +49,24 @@ gen ban_type = 1 if inrange(temp_var, 11, 19)
 replace ban_type = 2 if inrange(temp_var, 21, 49)
 label define ban_type_lbl 1 "IND-OCC" 2 "HEALTH"
 label values ban_type ban_type_lbl
+drop temp_var
 
 * Drop rows that say "See ban_ind and ind_coverage."
 drop if coverage == "See ban_ind and ind_coverage."
+drop if coverage == "Government Contractors"
 
 * Save current dataset
 save "data/clean_data/ban_coverage.dta", replace 
 
+* Create a coverage spreadsheet that I will use to make a coverage crosswalk
+drop statefip state ban_type
+duplicates drop
 
-* ----------- MERGE ------------------
-merge m:m coverage using "data/clean_data/coverage_occ1990_ind1990_crosswalk.dta"
+export excel "data/clean_data/ban_coverage_unique.xls", firstrow(variables) replace
 
-* NOTE: There are some that are not matched. So I need to go update the 1990
-* crosswalk to cover them. 
+* NOTE: Constructing crosswalk from ban coverage directly to OCC and IND in 
+* another excel file titled "ban_coverage_crosswalk.xls." 
 
-
-* Export to excel for further editing
-export excel "data/clean_data/ban_coverage.xls", firstrow(variables) replace 
 
 
 
