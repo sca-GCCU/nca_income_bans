@@ -4,6 +4,7 @@
 * --- HOUSEKEEPING ---
 * --------------------
 cd "C:\Users\scana\OneDrive\Documents\research\projects\nca_income_bans"
+// cd "/home/scanast/nca_income_bans" // for cluster runs 
 log using "logs/prep_state_nca_laws_data.log", replace 
 clear all 
 
