@@ -42,9 +42,9 @@ drop if _merge == 2
 drop _merge
 
 summarize cpi if year == 2024 // base year
-scalar cpi2024 = r(mean)
+scalar cpi_base = r(mean)
 
-gen incwage_real = incwage * (cpi2024 / cpi)
+gen incwage_real = incwage * (cpi_base / cpi)
 order incwage_real, after(incwage)
 
 
