@@ -1,11 +1,11 @@
-* Title: Make Descriptive Plots of ACS Data 
+* Title: Make Income Distribution Plots from the ACS Data 
 
 * --------------------
 * --- HOUSEKEEPING ---
 * --------------------
 cd "C:\Users\scana\OneDrive\Documents\research\projects\nca_income_bans"
 // cd "/home/scanast/nca_income_bans" // for cluster runs 
-log using "logs/descriptive_plots_acs.log", replace 
+log using "logs/inc_dist_plots_acs.log", replace 
 clear all 
 
 * Load data 
@@ -38,7 +38,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "08" & year >= `co_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`co_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`co_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -52,7 +52,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "08" & year >= `co_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`co_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`co_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -68,7 +68,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "08" & year >= `co_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`co_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`co_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Colorado")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -82,7 +82,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "08" & year >= `co_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`co_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`co_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Colorado")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -109,7 +109,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "11" & year >= `dc_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`dc_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`dc_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -123,7 +123,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "11" & year >= `dc_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`dc_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`dc_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -139,7 +139,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "11" & year >= `dc_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`dc_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`dc_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "D.C.")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -153,7 +153,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "11" & year >= `dc_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`dc_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`dc_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "D.C.")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -180,7 +180,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "23" & year >= `me_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`me_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`me_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -194,7 +194,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "23" & year >= `me_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`me_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`me_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -210,7 +210,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "23" & year >= `me_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`me_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`me_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Maine")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -224,7 +224,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "23" & year >= `me_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`me_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`me_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Maine")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -251,7 +251,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "33" & year >= `nh_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`nh_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`nh_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -265,7 +265,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "33" & year >= `nh_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`nh_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`nh_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -281,7 +281,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "33" & year >= `nh_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`nh_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`nh_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "New Hampshire")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -295,7 +295,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "33" & year >= `nh_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`nh_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`nh_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "New Hampshire")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -322,7 +322,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "44" & year >= `ri_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`ri_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`ri_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -336,7 +336,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "44" & year >= `ri_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`ri_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`ri_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -352,7 +352,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "44" & year >= `ri_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`ri_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`ri_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Rhode Island")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -366,7 +366,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "44" & year >= `ri_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`ri_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`ri_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Rhode Island")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -393,7 +393,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "51" & year >= `va_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`va_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`va_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -407,7 +407,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "51" & year >= `va_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`va_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`va_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -423,7 +423,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "51" & year >= `va_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`va_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`va_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Virginia")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -437,7 +437,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "51" & year >= `va_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`va_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`va_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Virginia")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -464,7 +464,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "53" & year >= `wa_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`wa_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`wa_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -478,7 +478,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "53" & year >= `wa_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`wa_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`wa_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -494,7 +494,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage if statefip == "53" & year >= `wa_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`wa_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`wa_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Washington")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -508,7 +508,7 @@ twoway ///
 		width(5000) fraction color(navy%30)) ///
 	(histogram incwage_w if statefip == "53" & year >= `wa_ban_year', ///
 		width(5000) fraction color(maroon%30)) ///
-	, xline(`wa_threshold', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`wa_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Control States" 2 "Washington")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") /// 
@@ -546,8 +546,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage if statefip == "17" & year >= `il_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`il_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`il_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`il_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`il_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -564,8 +564,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage_w if statefip == "17" & year >= `il_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`il_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`il_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`il_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`il_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -602,8 +602,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage if statefip == "24" & year >= `md_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`md_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`md_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`md_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`md_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -620,8 +620,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage_w if statefip == "24" & year >= `md_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`md_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`md_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`md_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`md_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -658,8 +658,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage if statefip == "41" & year >= `or_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`or_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`or_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`or_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`or_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
@@ -676,8 +676,8 @@ twoway ///
 		width(5000) fraction color(maroon%30)) ///
 	(histogram incwage_w if statefip == "41" & year >= `or_ban_year2', ///
 		width(5000) fraction color(green%30)) ///
-	, xline(`or_threshold1', lpattern(dash) lcolor(red) lwidth(thin)) ///
-	xline(`or_ban_year2', lpattern(dash) lcolor(red) lwidth(thin)) ///
+	, xline(`or_threshold1', lpattern(dash) lcolor(black) lwidth(thin)) ///
+	xline(`or_ban_year2', lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "No ban" 2 "First ban" 3 "Second ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
