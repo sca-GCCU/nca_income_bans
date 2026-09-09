@@ -73,6 +73,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -95,7 +96,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -103,7 +104,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -111,7 +112,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
@@ -213,6 +214,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -235,7 +237,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -243,7 +245,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -251,7 +253,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
@@ -354,6 +356,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -376,7 +379,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -384,7 +387,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -392,7 +395,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
@@ -495,6 +498,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -517,7 +521,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -525,7 +529,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -533,7 +537,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
@@ -639,6 +643,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -661,7 +666,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -669,7 +674,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -677,7 +682,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
@@ -781,6 +786,7 @@ drop n_qtrs nonmiss_*
 * --- Convert Nominal Earnings to Real Earnings --- 
 
 merge m:1 year using "data/clean_data/annual_cpi.dta"
+assert _merge != 1 if year <= `last_year' // each year <= 2024 should have match
 drop if _merge == 2 
 drop _merge 
 
@@ -803,7 +809,7 @@ order statefip state, after(countyfip)
 * Create flag 
 gen full_flag = !missing(eff_full_year) & eff_full_year <= `last_year' 
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if full_flag == 1
 drop full_flag
 
@@ -811,7 +817,7 @@ drop full_flag
 * Create flag 
 gen hourly_flag = !missing(eff_hourly_year) & eff_hourly_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if hourly_flag == 1
 drop hourly_flag
 
@@ -819,7 +825,7 @@ drop hourly_flag
 * Create flag 
 gen other_flag = !missing(eff_other_year) & eff_other_year <= `last_year'
 
-* Drop affected individuals 
+* Drop affected counties 
 drop if other_flag == 1
 drop other_flag
 
