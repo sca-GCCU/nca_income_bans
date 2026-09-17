@@ -83,7 +83,8 @@ twoway ///
 		legend(order(1 "Control States" 2 "Colorado")) /// 
 		xtitle("Annual earnings relative to threshold") ///
 		ytitle("Fraction") ///
-		xlabel(, nogrid) /// 
+		xlabel(-100000 -75000 -50000 -25000 0 25000 50000 75000 100000 ///
+			, labsize(small) angle(45) format(%9.0fc) nogrid) /// 
 		ylabel(, nogrid) 
 graph export "output/figures/co_rel_incdist_vcontrol.pdf", as(pdf) replace
 
@@ -100,7 +101,8 @@ twoway ///
 		legend(order(1 "Before ban" 2 "After ban")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
-		xlabel(, nogrid) /// 
+		xlabel(0(25000)200000 /// 
+			, labsize(small) angle(45) format(%9.0fc) nogrid) /// 
 		ylabel(, nogrid) 
 graph export "output/figures/co_incdist_prepost.pdf", as(pdf) replace
 
@@ -117,6 +119,8 @@ twoway ///
 		legend(order(1 "Control States" 2 "Colorado")) /// 
 		xtitle("Annual Earnings") ///
 		ytitle("Fraction") ///
+		xlabel(0(25000)200000 /// 
+			, labsize(small) angle(45) format(%9.0fc) nogrid) /// 
 		xlabel(, nogrid) /// 
 		ylabel(, nogrid) 
 graph export "output/figures/co_incdist_vcontrol.pdf", as(pdf) replace
