@@ -79,7 +79,7 @@ twoway ///
 	, by(co_group, note("") legend(position(6))) ///
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///
-		xtitle("Annual earnings relative to Colorado threshold (\$`co_threshold_fmt')") ///		
+		xtitle("Earnings relative to Colorado threshold (\$`co_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`co_lo'(`co_w')`co_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -150,7 +150,7 @@ twoway ///
 	, by(dc_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to District of Columbia threshold (\$`dc_threshold_fmt')") ///		
+		xtitle("Earnings relative to District of Columbia threshold (\$`dc_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`dc_lo'(`dc_w')`dc_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -220,7 +220,7 @@ twoway ///
 	, by(me_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Maine threshold (\$`me_threshold_fmt')") ///		
+		xtitle("Earnings relative to Maine threshold (\$`me_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`me_lo'(`me_w')`me_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -291,7 +291,7 @@ twoway ///
 	, by(nh_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to New Hampshire threshold (\$`nh_threshold_fmt')") ///		
+		xtitle("Earnings relative to New Hampshire threshold (\$`nh_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`nh_lo'(`nh_w')`nh_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -363,7 +363,7 @@ twoway ///
 	, by(ri_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Rhode Island threshold (\$`ri_threshold_fmt')") ///		
+		xtitle("Earnings relative to Rhode Island threshold (\$`ri_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`ri_lo'(`ri_w')`ri_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -434,7 +434,7 @@ twoway ///
 	, by(va_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Virginia threshold (\$`va_threshold_fmt')") ///		
+		xtitle("Earnings relative to Virginia threshold (\$`va_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`va_lo'(`va_w')`va_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -505,7 +505,7 @@ twoway ///
 	, by(wa_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Washington threshold (\$`wa_threshold_fmt')") ///		
+		xtitle("Earnings relative to Washington threshold (\$`wa_threshold_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`wa_lo'(`wa_w')`wa_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -583,7 +583,7 @@ twoway ///
 	, by(il_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Illinois `il_ban_year1' threshold (\$`il_threshold1_fmt')") ///		
+		xtitle("Earnings relative to Illinois `il_ban_year1' threshold (\$`il_threshold1_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`il_lo'(`il_lab')`il_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -641,7 +641,7 @@ twoway ///
 	, by(il_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Illinois `il_ban_year2' threshold (\$`il_threshold2_fmt')") ///		
+		xtitle("Earnings relative to Illinois `il_ban_year2' threshold (\$`il_threshold2_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`il_lo'(`il_lab')`il_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -716,7 +716,7 @@ twoway ///
 	, by(md_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Maryland `md_ban_year1' threshold (\$`md_threshold1_fmt')") ///		
+		xtitle("Earnings relative to Maryland `md_ban_year1' threshold (\$`md_threshold1_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`md_lo'(`md_w')`md_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -774,7 +774,7 @@ twoway ///
 	, by(md_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Maryland `md_ban_year2' threshold (\$`md_threshold2_fmt')") ///		
+		xtitle("Earnings relative to Maryland `md_ban_year2' threshold (\$`md_threshold2_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`md_lo'(`md_w')`md_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -847,7 +847,7 @@ twoway ///
 	, by(or_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Oregon `or_ban_year1' threshold (\$`or_threshold1_fmt')") ///		
+		xtitle("Earnings relative to Oregon `or_ban_year1' threshold (\$`or_threshold1_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`or_lo'(`or_w')`or_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -905,7 +905,7 @@ twoway ///
 	, by(or_group, note("") legend(position(6))) /// 
 		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
 		legend(order(1 "Pre" 2 "Post") rows(1)) ///	
-		xtitle("Annual earnings relative to Oregon `or_ban_year2' threshold (\$`or_threshold2_fmt')") ///		
+		xtitle("Earnings relative to Oregon `or_ban_year2' threshold (\$`or_threshold2_fmt')") ///		
 		ytitle("Fraction") ///
 		xlabel(`or_lo'(`or_w')`or_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
 		ylabel(, nogrid)
@@ -933,6 +933,103 @@ graph export "output/figures/or2_vs_control_abs_incdist_prepost.pdf", as(pdf) re
 
 * Drop variables that are no longer needed 
 drop post1_or post2_or or_group
+
+
+
+
+
+
+
+* ------------------------------------------------------------------------------
+* ------------------------------------------------------------------------------
+* ----------------- INC DISTRIBUTIONS FOR HIGH-USE INDUSTRIES ------------------
+* ------------------------------------------------------------------------------
+* ------------------------------------------------------------------------------
+
+* ----------------
+* --- COLORADO ---
+* ----------------
+* --- Prep data for CO plots --- 
+* Storing ban year and income threshold 
+summarize eff_inc1_year if statefip == "08"
+local co_ban_year = r(mean)
+summarize inc_threshold1 if statefip == "08"
+local co_threshold = r(mean)
+local co_threshold_fmt = strtrim(string(`co_threshold', "%12.0fc"))
+
+* Relative income (Colorado threshold applied to all states)
+cap drop inc_rel
+gen inc_rel = incwage - `co_threshold'
+
+* Pre/post using Colorado's ban year for all states
+cap drop post_co
+gen post_co = (year >= `co_ban_year')
+
+* Panel variable: Colorado vs. control states
+cap drop co_group
+gen co_group = .
+replace co_group = 1 if statefip == "08"
+replace co_group = 2 if missing(eff_inc1_year) // the never-treated 
+label define co_group_lbl 1 "Colorado" 2 "Never-Treated States", replace 
+label values co_group co_group_lbl
+
+local co_w  = 25000
+local co_lo = -100000
+local co_hi = 100000
+
+* --- Relative income dist plot --- 
+twoway ///
+	(histogram inc_rel if post_co == 0 & inrange(inc_rel, `co_lo', `co_hi'-1), ///
+		width(`co_w') start(`co_lo') fraction color(navy%30)) ///
+	(histogram inc_rel if post_co == 1 & inrange(inc_rel, `co_lo', `co_hi'-1), ///
+		width(`co_w') start(`co_lo') fraction color(maroon%30)) ///
+	if !missing(co_group) & high_use == 1 ///
+	, by(co_group, note("") legend(position(6))) ///
+		xline(0, lpattern(dash) lcolor(black) lwidth(thin)) ///
+		legend(order(1 "Pre" 2 "Post") rows(1)) ///
+		xtitle("Earnings relative to Colorado threshold (\$`co_threshold_fmt') - High-Use Industry") ///		
+		ytitle("Fraction") ///
+		xlabel(`co_lo'(`co_w')`co_hi', labsize(small) angle(45) format(%9.0fc) nogrid) ///
+		ylabel(, nogrid)
+graph export "output/figures/co_vs_control_rel_incdist_prepost_hu.pdf", as(pdf) replace
+
+
+* --- Absolute income dist plot --- 
+local co_upper = 200000
+
+twoway ///
+	(histogram incwage if post_co == 0 & incwage < `co_upper', ///
+		width(`co_w') start(0) fraction color(navy%30)) ///
+	(histogram incwage if post_co == 1 & incwage < `co_upper', ///
+		width(`co_w') start(0) fraction color(maroon%30)) ///
+	if !missing(co_group) & high_use == 1 ///
+	, by(co_group, note("") legend(position(6))) ///
+		xline(`co_threshold', lpattern(dash) lcolor(black) lwidth(thin)) ///
+		legend(order(1 "Pre" 2 "Post") rows(1)) ///
+		xtitle("Earnings around Colorado threshold (\$`co_threshold_fmt') - High-Use Industry") ///		
+		ytitle("Fraction") ///
+		xlabel(0(`co_w')`co_upper', labsize(small) angle(45) format(%9.0fc) nogrid) ///
+		ylabel(, nogrid)
+graph export "output/figures/co_vs_control_abs_incdist_prepost_hu.pdf", as(pdf) replace
+
+* Drop variables that are no longer needed 
+drop post_co co_group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

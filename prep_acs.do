@@ -254,6 +254,32 @@ frame dropcounts {
 }
 
 
+
+* -----------------------------------------------
+* --- GENERATE HIGH-VS-LOW NCA INCIDENCE FLAG --- 
+* -----------------------------------------------
+
+* NOTE: See "IPUMS_IND_prefix_map_NCA_industries_CLAUDE.xlsx" for mapping of 
+* NAICS sectors in Starr et al. (2021) to IPUMS codes. Note that the two-digit
+* prefixes do not change across years. 
+
+* Generate 2-digit version of IND code 
+gen ind2 = substr(ind, 1, 2)
+destring ind2, replace 
+order ind2, after(ind)
+
+* Generate High-incidence flag 
+gen high_use = (inlist(ind2, 3, 4) | /// // Mining + Extraction 
+	inrange(ind2, 10, 45) | /// // Manufacturing; Wholesale 
+	inrange(ind2, 64, 69) | /// // Information; Finance, Insurance 
+	inrange(ind2, 72, 78)) // Professional...; Adminstrative...; Education...
+order high_use, after(ind2)
+replace high_use = 0 if ind == "7570"
+drop ind2
+
+label define high_use_lbl 0 "Low-Use" 1 "High-Use"
+label values high_use high_use_lbl
+
 * --------------------------
 * --- SAVE ANALYSIS DATA --- 
 * --------------------------
